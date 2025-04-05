@@ -1,0 +1,29 @@
+body { 
+  margin: 0; 
+}
+
+#math-container{
+    background-color: rgba(255, 255, 255, 0.8);;
+    position: absolute;
+    left: 0rem;
+    bottom: 0rem;
+    width: 200vx;
+    height: 100vx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-filter: invert(100%);
+    filter: invert(100%);       
+    display: inline-block;
+    opacity: 0.5;
+}
+
+/* #stat-field-f{
+    opacity: 1.0;
+} */
+
+canvas {
+    margin: 0;
+    padding: 0;
+    display: block;
+}
