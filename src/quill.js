@@ -1,4 +1,4 @@
-import { parseTex, evaluateTex } from '../lib/tex-math-parser/index.js'; //NOT NPM version - Customized!
+import { parseTex, evaluateTex } from '../public/lib/tex-math-parser/index.js'; //NOT NPM version - Customized!
 
 import { update_all } from './main.js';
 // Mathquil stuff
