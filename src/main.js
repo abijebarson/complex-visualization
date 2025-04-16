@@ -5,7 +5,6 @@ import * as THREE from 'three';
 import { camera } from "./core/camera.js"
 import { renderer } from "./core/renderer.js"
 import { controls } from './core/control.js';
-// import { ambientLight, light } from './core/lights.js';
 import { switch3D, switch2D, twoDengine } from './core/engine-handler.js';
 
 import { math, magnitude, distance } from './math-helper.js';

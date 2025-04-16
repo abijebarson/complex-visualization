@@ -3,21 +3,7 @@ import { ParametricGeometry } from 'three/addons/geometries/ParametricGeometry.j
 import { make_ambientLight, make_light } from './core/lights.js';
 import { clear_scene } from './core/engine-handler.js';
 import { math } from './math-helper.js';
-import { init_vp } from './vector-plot.js';
 import { PARAMS } from './gui.js';
-
-
-// function initParamFunc(u, v, vector) {
-//     let x = xRange * u + xMin;
-//     let y = yRange * v + yMin;
-//     let z = Math.cos(x) * Math.cos(y);
-//     if ( isNaN(z) ){
-//         console.log('isNan(z) Trued', x, y, z)
-//         return vector.set(0,0,0); // TODO: better fix
-//     }
-//     else
-//         return vector.set(x, z, y);
-// };
 
 export function update_3dp(fz, scene){
     clear_scene(scene)
