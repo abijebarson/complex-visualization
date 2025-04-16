@@ -1,5 +1,8 @@
-import { CylinderGeometry, ConeGeometry, MeshLambertMaterial, Mesh, Group, Color } from "three";
+import { Scene, CylinderGeometry, ConeGeometry, MeshLambertMaterial, Mesh, Group, Color } from "three";
+import { make_ambientLight, make_light } from './core/lights.js';
 import { magnitude, distance } from './math-helper.js';
+
+let arrmat;
 
 const ARROW_BODY = new CylinderGeometry( 1, 1, 1, 12 )
                         .rotateX( Math.PI/2)
@@ -50,7 +53,20 @@ export function makeArrows(num_arrows, arrow_closeness, scene){
     return arrmat
 }
 
-export function animate_vector_plot(fz, arrmat){
+const ARROW_NUM = 40
+const ARROW_CLOSENESS = 4
+
+export function init_vp(scene){
+    // let scene1 = new Scene()
+    scene.background = new Color(0x000000)
+    scene.add(make_ambientLight())
+    scene.add(make_light())
+    arrmat = makeArrows(ARROW_NUM, ARROW_CLOSENESS, scene)
+
+    return scene
+}
+
+export function animate_vector_plot(fz){
     const ARROW_NUM = arrmat.length
     for (let i = -ARROW_NUM/2; i < ARROW_NUM/2; i++){
         for (let j = -ARROW_NUM/2; j < ARROW_NUM/2; j++){
