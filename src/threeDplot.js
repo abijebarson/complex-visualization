@@ -82,7 +82,6 @@ export function update_3dp(fz, scene){
     }
 
     paramGeometry.setAttribute('color', new THREE.BufferAttribute(new Float32Array(colors), 4));
-    paramGeometry.set
     const paramshape = new THREE.Mesh( paramGeometry, paramMaterial );
     scene.add( paramshape );
 }
