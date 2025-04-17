@@ -37,7 +37,13 @@ export function update_3dp(fz, scene){
     }
 
     const paramGeometry = new ParametricGeometry( fz_uv, PARAMS.tdp_segments, PARAMS.tdp_segments );
-    const paramMaterial = new MeshBasicMaterial( { vertexColors: true, side: DoubleSide, transparent: true, wireframe: false } );
+    const paramMaterial = new MeshBasicMaterial( { 
+        vertexColors: true, 
+        side: DoubleSide, 
+        transparent: true, 
+        wireframe: false,
+        depthWrite : false
+    } );
     
     const tempvector = new Vector3()
     const color = new Color( 0x000000 );

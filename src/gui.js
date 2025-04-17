@@ -12,6 +12,7 @@ export const PARAMS = {
 
     dc_res: 10,
     dc_anim: true,
+    dc_update_btn_clicked: false,
     dc_lightness: true,
     dc_l_factor: 0.08,
     dc_scale: 100,
@@ -43,6 +44,9 @@ dc_folder.addBinding(PARAMS.dc_coords, 'imag', {readonly: true});
 // dc_folder.addBinding(PARAMS.dc_coords, {readonly: true})
 dc_folder.addBinding(PARAMS, "dc_res", {min: 1, max: 20, step: 1})
 dc_folder.addBinding(PARAMS, "dc_anim")
+dc_folder.addButton({title: 'Update'}).on('click', () => {
+    PARAMS.dc_update_btn_clicked = true 
+});
 dc_folder.addBinding(PARAMS, "dc_lightness")
 dc_folder.addBinding(PARAMS, "dc_l_factor", {min: 0, max: 0.1})
 dc_folder.addBinding(PARAMS, "dc_scale", {min: 0, max: 1000, step: 1, readonly: true})

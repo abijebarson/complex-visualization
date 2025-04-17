@@ -1,7 +1,6 @@
 import { parseTex, evaluateTex } from '../tex-math-parser/index.js'; //NOT NPM version - Customized!
-
 import { update_all } from './main.js';
-// Mathquil stuff
+
 var MQ = MathQuill.getInterface(2); // for backcompat
 
 var mathFieldSpanX = document.getElementById('math-field-f');
@@ -39,8 +38,4 @@ const mathfieldX = MQ.MathField(mathFieldSpanX, {
             }
         },
     }
-}
-);
-
-// let xparsed = parseTex(mathfieldX.latex())
-// fz = function (z_val) {return xparsed.evaluate({z:z_val})}
+});

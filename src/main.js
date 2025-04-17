@@ -7,9 +7,8 @@ import { renderer } from "./core/renderer.js"
 import { controls } from './core/control.js';
 import { switch3D, switch2D, twoDengine } from './core/engine-handler.js';
 
-import { math, magnitude, distance } from './math-helper.js';
 import { init_vp, animate_vector_plot } from './vector-plot.js';
-import { animate_3D_plot, init_3dp, update_3dp } from './threeDplot.js';
+import { init_3dp, update_3dp } from './threeDplot.js';
 import { makeComplexPlane} from "./domain-plot.js"
 import { fz } from "./quill.js"
 
@@ -58,7 +57,11 @@ function animate2D(t){
         //Domain coloring plot
         switch(PARAMS.type){
             case "DC":
-                if (PARAMS.dc_anim){makeComplexPlane(fz, PARAMS.dc_res, 0)}
+                if (PARAMS.dc_anim){makeComplexPlane(fz, PARAMS.dc_res, 0)} 
+                else if (PARAMS.dc_update_btn_clicked){
+                    makeComplexPlane(fz, PARAMS.dc_res, 0)
+                    PARAMS.dc_update_btn_clicked = false
+                } 
                 break;
         }
     }

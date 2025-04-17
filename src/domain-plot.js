@@ -1,15 +1,12 @@
 import './style.css'
 
 import { ctx, canvas, pix2z } from './canvas-helper';
-import { math } from './math-helper';
 import { PARAMS } from './gui';
 
 // const mathcontainer = document.querySelector('#math-container')
 // mathcontainer.innerHTML = ""
 
 export function makeComplexPlane(f, res, rextra){
-    let x = 0
-    let y = 0
     for (let i = 0; i < canvas.width; i+=res){
         for (let j = 0; j < canvas.height; j+=res){
             let z = pix2z(i, j) 
