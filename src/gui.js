@@ -1,7 +1,6 @@
 import { Pane } from 'tweakpane';
 import * as EssentialsPlugin from '@tweakpane/plugin-essentials';
 import { changeType } from './core/engine-handler';
-import { max } from 'mathjs';
 import { update_all } from './main';
 import { fz } from './quill';
 

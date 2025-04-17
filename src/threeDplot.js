@@ -1,4 +1,4 @@
-import * as THREE from 'three';
+import { MeshBasicMaterial, Color, Vector3, BufferAttribute, DoubleSide, Mesh}from 'three';
 import { ParametricGeometry } from 'three/addons/geometries/ParametricGeometry.js';
 import { make_ambientLight, make_light } from './core/lights.js';
 import { clear_scene } from './core/engine-handler.js';
@@ -7,7 +7,7 @@ import { PARAMS } from './gui.js';
 
 export function update_3dp(fz, scene){
     clear_scene(scene)
-    scene.background = new THREE.Color(0x000000)
+    scene.background = new Color(0x000000)
     scene.add(make_ambientLight())
     // scene.add(make_light())
 
@@ -37,10 +37,10 @@ export function update_3dp(fz, scene){
     }
 
     const paramGeometry = new ParametricGeometry( fz_uv, PARAMS.tdp_segments, PARAMS.tdp_segments );
-    const paramMaterial = new THREE.MeshBasicMaterial( { vertexColors: true, side: THREE.DoubleSide, transparent: true, wireframe: false } );
+    const paramMaterial = new MeshBasicMaterial( { vertexColors: true, side: DoubleSide, transparent: true, wireframe: false } );
     
-    const tempvector = new THREE.Vector3()
-    const color = new THREE.Color( 0x000000 );
+    const tempvector = new Vector3()
+    const color = new Color( 0x000000 );
     let colors = []
     let point
     
@@ -81,8 +81,8 @@ export function update_3dp(fz, scene){
         colors[4*i+2] = color.b
     }
 
-    paramGeometry.setAttribute('color', new THREE.BufferAttribute(new Float32Array(colors), 4));
-    const paramshape = new THREE.Mesh( paramGeometry, paramMaterial );
+    paramGeometry.setAttribute('color', new BufferAttribute(new Float32Array(colors), 4));
+    const paramshape = new Mesh( paramGeometry, paramMaterial );
     scene.add( paramshape );
 }
 
